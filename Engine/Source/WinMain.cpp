@@ -1,20 +1,28 @@
-#include <windows.h>
+#include "pch.h"
 
-	#define MAX_NAME_STRING 256
-	#define HInstance() GetModuleHandle(NULL)
+WCHAR WindowClass[MAX_NAME_STRING];
+WCHAR WindowTitle[MAX_NAME_STRING];
 
-	WCHAR WindowClass[MAX_NAME_STRING];
-	WCHAR WindowTitle[MAX_NAME_STRING];
+INT WindowWidth;
+INT WindowHeight;
 
-	INT WindowWidth;
-	INT WindowHeight;
+LRESULT CALLBACK WindowProcess(HWND hWnd, UINT message, WPARAM wparam, LPARAM lparam)
+{
+	switch (message) {
+	case WM_DESTROY:
+		PostQuitMessage(0);
+		break;
+	}
+
+	return DefWindowProc(hWnd, message, wparam, lparam);
+}
 
 int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) {
-	
+
 	/* - Initialize Global Variables - */
 
 	wcscpy_s(WindowClass, MAX_NAME_STRING, TEXT("JANK WindowClass"));
-	wcscpy_s(WindowTitle, MAX_NAME_STRING,  TEXT("JANK WindowTitle"));
+	wcscpy_s(WindowTitle, MAX_NAME_STRING, TEXT("JANK WindowTitle"));
 
 	WindowWidth = 1366;
 	WindowHeight = 768;
@@ -37,18 +45,18 @@ int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) {
 
 	wcex.hInstance = HInstance();
 
-	wcex.lpfnWndProc = DefWindowProc;
+	wcex.lpfnWndProc = WindowProcess;
 
 	RegisterClassEx(&wcex);
 
 	/* - Create and Display Window - */
 
 	HWND hWnd = CreateWindow(WindowClass, WindowTitle, WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, 0, WindowWidth, WindowHeight,  nullptr, nullptr, HInstance(), nullptr
+		CW_USEDEFAULT, 0, WindowWidth, WindowHeight, nullptr, nullptr, HInstance(), nullptr
 	);
-	
+
 	if (!hWnd) {
-		
+
 		MessageBox(0, L"Failed to create  a Window..", 0, 0);
 		return 0;
 	}
@@ -62,7 +70,7 @@ int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) {
 	while (msg.message != WM_QUIT) {
 
 		// non blocking messages for PeekMessage
-		if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE)) 
+		if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))
 		{
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
