@@ -22,9 +22,9 @@ LRESULT CALLBACK WindowProcess(HWND hWnd, UINT message, WPARAM wparam, LPARAM lp
 int CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) {
 
 	/* - Initialize Global Variables - */
-
-	wcscpy_s(WindowClass, MAX_NAME_STRING, TEXT("JANK WindowClass"));
-	wcscpy_s(WindowTitle, MAX_NAME_STRING, TEXT("JANK WindowTitle"));
+	;
+	LoadString(HInstance(), IDS_PERGAMENAME, WindowTitle, MAX_NAME_STRING);
+	LoadString(HInstance(), IDS_WINDOWCLASS, WindowClass, MAX_NAME_STRING);
 
 	WindowWidth = 1366;
 	WindowHeight = 768;
