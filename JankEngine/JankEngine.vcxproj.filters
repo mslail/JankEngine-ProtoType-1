@@ -19,15 +19,36 @@
     <Filter Include="Source\pch">
       <UniqueIdentifier>{38f1b0c2-9cf0-435c-a824-6933f8789861}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Private\Platform">
+      <UniqueIdentifier>{8bc61b39-4782-4b58-bc10-f74d2cca7bed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Private\Platform\WIN_32">
+      <UniqueIdentifier>{db62b2f0-82b6-43eb-887f-68c733706a93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Public\Platform">
+      <UniqueIdentifier>{ac6c372b-f28e-44c0-bf9a-1c4fc1766526}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Public\Platform\WIN_32">
+      <UniqueIdentifier>{4092059f-d525-41cd-a4d7-14a5752a7ce3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\JankEngine.cpp">
       <Filter>Source\pch</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Platform\WIN_32\IApplication.cpp">
+      <Filter>Source\Private\Platform\WIN_32</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\JankEngine.h">
       <Filter>Source\pch</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\WIN_32\IApplication.h">
+      <Filter>Source\Public\Platform\WIN_32</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Platform\WIN_32\WinEntry.h">
+      <Filter>Source\Public\Platform\WIN_32</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

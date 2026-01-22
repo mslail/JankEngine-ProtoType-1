@@ -29,18 +29,18 @@ LRESULT CALLBACK WindowProcess(HWND hWnd, UINT message, WPARAM wparam, LPARAM lp
 /* ------------------------------------------------------ */
 #pragma region Operations
 
-INT CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
-{
-	InitializeVariables();
-
-	CreateWindowClass();
-
-	InitializeWindow();
-
-	MessageLoop();
-
-	return 0;
-}
+//INT CALLBACK WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
+//{
+//	InitializeVariables();
+//
+//	CreateWindowClass();
+//
+//	InitializeWindow();
+//
+//	MessageLoop();
+//
+//	return 0;
+//}
 
 LRESULT CALLBACK WindowProcess(HWND hWnd, UINT message, WPARAM wparam, LPARAM lparam)
 {
@@ -100,16 +100,7 @@ VOID InitializeWindow() {
 }
 
 VOID MessageLoop() {
-	MSG msg = { 0 };
-	while (msg.message != WM_QUIT)
-	{
-		// If there are Window messages then process them.
-		if (PeekMessage(&msg, 0, 0, 0, PM_REMOVE))
-		{
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
-		}
-	}
+
 }
 #pragma endregion
 /* ------------------------------------------------------ */
