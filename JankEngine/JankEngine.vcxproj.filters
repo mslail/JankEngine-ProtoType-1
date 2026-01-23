@@ -31,6 +31,12 @@
     <Filter Include="Source\Public\Platform\WIN_32">
       <UniqueIdentifier>{4092059f-d525-41cd-a4d7-14a5752a7ce3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Private\Common">
+      <UniqueIdentifier>{2ac11d83-7edb-4155-9e8e-04da88cb921a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Public\Common">
+      <UniqueIdentifier>{6f24aa4b-a82c-4cb7-a5ca-38b173a5d6e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\JankEngine.cpp">
@@ -38,6 +44,9 @@
     </ClCompile>
     <ClCompile Include="Source\Platform\WIN_32\IApplication.cpp">
       <Filter>Source\Private\Platform\WIN_32</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Common\Logger.cpp">
+      <Filter>Source\Private\Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -49,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="Source\Platform\WIN_32\WinEntry.h">
       <Filter>Source\Public\Platform\WIN_32</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Common\Logger.h">
+      <Filter>Source\Public\Common</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -63,7 +63,7 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>JankEngine.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>D:\Code\JEngine\prototype-one\JankEngine-ProtoType-1\JankEngine\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)JankEngine\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>NotSet</SubSystem>
@@ -82,7 +82,7 @@
       <LanguageStandard_C>stdc17</LanguageStandard_C>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>JankEngine.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>D:\Code\JEngine\prototype-one\JankEngine-ProtoType-1\JankEngine\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)JankEngine\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>NotSet</SubSystem>
@@ -90,10 +90,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Common\Logger.cpp" />
     <ClCompile Include="Source\JankEngine.cpp" />
     <ClCompile Include="Source\Platform\WIN_32\IApplication.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Common\Logger.h" />
     <ClInclude Include="Source\JankEngine.h" />
     <ClInclude Include="Source\Platform\WIN_32\IApplication.h" />
     <ClInclude Include="Source\Platform\WIN_32\WinEntry.h" />
